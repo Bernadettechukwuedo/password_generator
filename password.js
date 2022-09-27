@@ -5,6 +5,7 @@ const upperCase = document.getElementById('uppercase');
 const formNumber = document.getElementById('num');
 const formSymbol = document.getElementById('symbols');
 const passwordDisplay = document.getElementById('display');
+const copy = document.getElementById('icon');
 const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90);
 const LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122);
 const NUMBER_CHAR_CODES = arrayFromLowToHigh(48, 57);
@@ -21,6 +22,7 @@ button.addEventListener('submit', e => {
     const password = generatePassword(amount, uppercase, num, symbols);
     passwordDisplay.innerText = password
 })
+
 
 function generatePassword(amount, uppercase, num, symbols) {
     let charCodes = LOWERCASE_CHAR_CODES
@@ -48,3 +50,4 @@ function syncAmount(e) {
     range.value = value
 
 }
+

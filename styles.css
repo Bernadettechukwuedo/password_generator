@@ -7,6 +7,7 @@ body{
     background-image: url("images/pix.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: rgb(31,114,166);
     min-height: 60vh;
     display: flex;
     justify-content: center;
