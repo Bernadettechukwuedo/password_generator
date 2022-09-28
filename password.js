@@ -50,4 +50,5 @@ function syncAmount(e) {
     range.value = value
 
 }
-
+number.addEventListener('input', syncAmount);
+range.addEventListener('input', syncAmount);
