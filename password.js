@@ -4,6 +4,7 @@ const button = document.getElementById('generatorbutton');
 const upperCase = document.getElementById('uppercase');
 const formNumber = document.getElementById('num');
 const formSymbol = document.getElementById('symbols');
+const formCase = document.getElementById('lowercase');
 const passwordDisplay = document.getElementById('display');
 const copy = document.getElementById('icon');
 const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90);
@@ -19,16 +20,18 @@ button.addEventListener('submit', e => {
     const uppercase = upperCase.checked;
     const num = formNumber.checked;
     const symbols = formSymbol.checked;
-    const password = generatePassword(amount, uppercase, num, symbols);
+    const lowercase = formCase.checked;
+    const password = generatePassword(amount, uppercase, num, symbols, lowercase);
     passwordDisplay.innerText = password
 })
 
 
-function generatePassword(amount, uppercase, num, symbols) {
-    let charCodes = LOWERCASE_CHAR_CODES
+function generatePassword(amount, uppercase, num, symbols, lowercase) {
+    let charCodes = []
     if (uppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES)
     if (num) charCodes = charCodes.concat(NUMBER_CHAR_CODES)
     if (symbols) charCodes = charCodes.concat(SYMBOLS_CHAR_CODES)
+    if (lowercase) charCodes = charCodes.concat(LOWERCASE_CHAR_CODES)
     const passwordCharacters = []
     for (let i = 0; i < amount; i++) {
         const characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
